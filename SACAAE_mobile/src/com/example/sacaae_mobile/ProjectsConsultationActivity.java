@@ -117,9 +117,10 @@ public class ProjectsConsultationActivity extends Activity {
 
 		protected void onPostExecute(ArrayList<Project> projectsList) {
 			ListView listView1 = (ListView) findViewById(R.id.ListView01);
-			listView1.setAdapter(new ArrayAdapter<Project>(
+			ArrayAdapter<Project> adapter = new ArrayAdapter<Project>(
 					getApplicationContext(),
-					android.R.layout.simple_list_item_1, projectsList));
+					R.layout.custom_text_view, projectsList);
+			listView1.setAdapter(adapter);
 		}
 
 	}

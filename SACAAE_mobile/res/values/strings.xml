@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">SACAAE_mobile</string>
+    <string name="app_name">SACA-AE Mobile</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_consultation_menu">SACA-AE|Consultas</string>

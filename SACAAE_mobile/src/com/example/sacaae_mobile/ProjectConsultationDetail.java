@@ -9,8 +9,6 @@ import java.util.ArrayList;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import commons.ConstantsFile;
-import commons.Professor;
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -19,6 +17,9 @@ import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import commons.ConstantsFile;
+import commons.Professor;
 
 public class ProjectConsultationDetail extends Activity {
 
@@ -37,13 +38,17 @@ public class ProjectConsultationDetail extends Activity {
 		projectName.setText(bundle.getString("ProjectName"));
 		projectStartDate.setText(bundle.getString("ProjectStartDate"));
 		projectEndDate.setText(bundle.getString("ProjectEndDate"));
-		projectLink.setText(bundle.getString("ProjectLink"));
+		if (bundle.getString("ProjectLink").equalsIgnoreCase(""))
+			projectLink.setText(bundle.getString("ProjectLink"));
+		else
+			projectLink.setText("Link al proyecto sin asignar");
 
 		/* Send the GetProjectProfessor request to WCF service */
 		String vProjectID = bundle.getString("ProjectID");
-		
+
 		new ProjectsDetailsAsyncTask()
-				.execute(ConstantsFile.WCF_SERVICE_ADDRESS + "GetProjectProfessors/"+vProjectID);
+				.execute(ConstantsFile.WCF_SERVICE_ADDRESS
+						+ "GetProjectProfessors/" + vProjectID);
 	}
 
 	public ArrayList<Professor> FromJSONtoArrayList(String url) {
@@ -84,11 +89,12 @@ public class ProjectConsultationDetail extends Activity {
 			return FromJSONtoArrayList(url[0]);
 		}
 
-		protected void onPostExecute(ArrayList<Professor> projectsList) {
+		protected void onPostExecute(ArrayList<Professor> professorsList) {
 			ListView listView1 = (ListView) findViewById(R.id.ListViewProjectDetail);
-			listView1.setAdapter(new ArrayAdapter<Professor>(
-					getApplicationContext(),
-					android.R.layout.simple_list_item_1, projectsList));
+			ArrayAdapter<Professor> adapter = new ArrayAdapter<Professor>(
+					getApplicationContext(), R.layout.custom_text_view_detail,
+					professorsList);
+			listView1.setAdapter(adapter);
 		}
 
 	}
