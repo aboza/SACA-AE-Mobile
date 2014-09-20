@@ -41,4 +41,11 @@ public class ConsultationMenuActivity extends Activity {
 	    Intent intent = new Intent(this, ProjectsConsultationActivity.class);
 	    startActivity(intent);
 	}
+	
+	/*Muestra las comisiones*/
+	/** Called when the user clicks the Comision button */
+	public void comisionBtnOnClick(View view) {
+	    Intent intent = new Intent(this, ComisionConsultationActivity.class);
+	    startActivity(intent);
+	}
 }

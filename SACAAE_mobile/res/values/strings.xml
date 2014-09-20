@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
     <string name="app_name">SACA-AE Mobile</string>
@@ -7,5 +6,7 @@
     <string name="title_activity_consultation_menu">SACA-AE|Consultas</string>
     <string name="title_activity_projects_consultation">SACA-AE|Consultas|Proyectos</string>
     <string name="title_activity_project_consultation_detail">SACA-AE|Proyectos|Detalle</string>
+    <string name="title_activity_comision_consultation">SACA-AE|Consultas|Comisiones</string>
+    <string name="title_activity_comision_consultation_detail">SACA-AE|Comisiones|Detalle</string>
 
 </resources>

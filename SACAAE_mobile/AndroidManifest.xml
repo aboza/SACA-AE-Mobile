@@ -41,6 +41,14 @@
             android:name=".ProjectConsultationDetail"
             android:label="@string/title_activity_project_consultation_detail" >
         </activity>
+        <activity
+            android:name=".ComisionConsultationActivity"
+            android:label="@string/title_activity_comision_consultation" >
+        </activity>
+        <activity
+            android:name=".ComisionConsultationDetail"
+            android:label="@string/title_activity_comision_consultation_detail" >
+        </activity>
     </application>
 
 </manifest>
